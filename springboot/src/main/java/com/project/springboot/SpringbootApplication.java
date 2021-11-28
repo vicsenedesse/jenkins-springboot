@@ -1,14 +1,13 @@
-package com.jenkins;
+package com.project.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JenkinsApplication {
+public class SpringbootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JenkinsApplication.class, args);
-		println("hello");
+		SpringApplication.run(SpringbootApplication.class, args);
 	}
 
 }
