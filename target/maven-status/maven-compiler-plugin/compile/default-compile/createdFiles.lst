@@ -1,1 +1,6 @@
+com/jenkins/springboot/repository/ProdutoRepository.class
+com/jenkins/springboot/model/Produto.class
 com/jenkins/springboot/SpringbootApplication.class
+com/jenkins/springboot/controller/dto/ProdutoRs.class
+com/jenkins/springboot/controller/dto/ProdutoRq.class
+com/jenkins/springboot/controller/ProdutoController.class
