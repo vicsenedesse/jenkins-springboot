@@ -47,4 +47,11 @@ public class ProdutoControllerTeste {
       .andExpect(status().isOk())
       .andExpect(content().json("[]"));
   }
+
+  public void testGetAllFail() throws Exception{
+    mockMvc.perform(get("/api/produto/")
+      .accept(MediaType.APPLICATION_JSON))
+      .andExpect(status().isOk())
+      .andExpect(content().json("[aaa]"));
+  }
 }
