@@ -19,11 +19,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
 @RequestMapping("/api/produto")public class ProdutoController {
 
+    @Autowired
     private final ProdutoRepository produtoRepository;
 
     public ProdutoController(ProdutoRepository produtoRepository) {
@@ -39,15 +40,11 @@ import java.util.stream.Collectors;
                 .collect(Collectors.toList());
     }
 
-
-
     @GetMapping("/{id}") 
     public ProdutoRs findByProdutoId(@PathVariable("id") Long id) {
         var produto = produtoRepository.getOne(id);
         return ProdutoRs.converter(produto);
     }
-
-
 
     @PostMapping("/produto")  
     public ResponseEntity<String> savePerson(@RequestBody ProdutoRq produto) {
@@ -63,7 +60,6 @@ import java.util.stream.Collectors;
         return ResponseEntity.ok("Sucesso!");
 //        return Exception();
     }
-
 
     @PutMapping("/{id}") 
     public void updatePerson(@PathVariable("id") Long id, @RequestBody ProdutoRq produto) throws Exception {
@@ -82,8 +78,6 @@ import java.util.stream.Collectors;
         }
     }
 
-
-
     @DeleteMapping(path ={"/{id}"})
     public ResponseEntity <?> delete(@PathVariable long id) {
        return produtoRepository.findById(id)
@@ -92,7 +86,6 @@ import java.util.stream.Collectors;
                    return ResponseEntity.ok().build();
                }).orElse(ResponseEntity.notFound().build());
     }
-
 
     @GetMapping("/filter") 
     public List<ProdutoRs> findPersonByCategoria(@RequestParam("categoria") String categoria) {

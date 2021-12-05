@@ -14,16 +14,16 @@ public class Produto{
    private Long id;
 
    @Column(name = "descricao")
-   private String descricao;
+   private String descricao = "";
 
    @Column(name = "data")
-   private String data;
+   private String data = "";
 
    @Column(name = "preco")
-   private String preco;
+   private String preco = "";
 
    @Column(name = "categoria")
-   private String categoria;
+   private String categoria = "";
 
      
    public Long getId() { return id; }
